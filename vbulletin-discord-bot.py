@@ -27,7 +27,7 @@ class Post:
         return datetime.datetime.strptime(self.date, "%a, %d %b %Y %H:%M:%S %Z")
 
 
-client = discord.Client()
+client = discord.Client(intents=discord.Intents.default())
 channel = None
 last_time = None
 
@@ -236,7 +236,7 @@ def read_config():
 
 
 if __name__ == "__main__":
-    locale.setlocale(locale.LC_ALL, "en_US")
+    locale.setlocale(locale.LC_ALL, "C.UTF-8")
 
     read_config()
 
